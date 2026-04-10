@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lead Capture Landing Page</title>
+    <meta
+      name="description"
+      content="Premium lead capture landing page template with Tally form integration."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./config.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar container">
+        <div class="brand-block">
+          <p class="eyebrow">Lead Capture Template</p>
+          <a href="#top" class="brand" data-config="businessName">Your Business</a>
+        </div>
+        <a class="call-button" id="callButton" href="#">
+          Call <span data-config="phoneNumber">(000) 000-0000</span>
+        </a>
+      </header>
+
+      <main id="top">
+        <section class="hero container">
+          <div class="hero-copy">
+            <p class="section-tag">Premium local service</p>
+            <h1>Get a Quote in Minutes</h1>
+            <p class="hero-subheadline">
+              Fast, simple, and reliable
+              <span data-config="serviceType">Service</span> in
+              <span data-config="location">Your Area</span>
+            </p>
+            <p class="hero-offer" data-config="offerText">
+              Limited-time offer goes here.
+            </p>
+
+            <div class="hero-actions">
+              <a class="primary-button" href="#quote-form">Get My Quote</a>
+              <a class="secondary-button" id="heroCallButton" href="#">
+                Call <span data-config="phoneNumber">(000) 000-0000</span>
+              </a>
+            </div>
+
+            <div class="hero-trust">
+              <div class="trust-item">
+                <strong>Reliable service</strong>
+                <span>Professional, clear communication from the start.</span>
+              </div>
+              <div class="trust-item">
+                <strong>Fast response</strong>
+                <span>Quick follow-up so leads do not go cold.</span>
+              </div>
+              <div class="trust-item">
+                <strong>Simple booking</strong>
+                <span>Easy next steps with no unnecessary friction.</span>
+              </div>
+            </div>
+          </div>
+
+          <aside class="hero-card">
+            <p class="card-kicker">Why people choose us</p>
+            <h2>
+              Clean, trustworthy <span data-config="serviceType">service</span>
+              for <span data-config="location">your area</span>
+            </h2>
+            <ul class="card-points">
+              <li>Fast quote turnaround</li>
+              <li>Premium customer experience</li>
+              <li>Built to convert mobile traffic</li>
+            </ul>
+          </aside>
+        </section>
+
+        <section class="section container">
+          <div class="section-heading">
+            <p class="section-tag">How it works</p>
+            <h2>Simple from first click to follow-up</h2>
+          </div>
+          <div class="steps-grid">
+            <article class="step-card">
+              <span class="step-number">01</span>
+              <h3>Fill out the form</h3>
+              <p>Share a few quick details so we can understand your request.</p>
+            </article>
+            <article class="step-card">
+              <span class="step-number">02</span>
+              <h3>We review your request</h3>
+              <p>We look over the details and prepare the best next step.</p>
+            </article>
+            <article class="step-card">
+              <span class="step-number">03</span>
+              <h3>You get contacted quickly</h3>
+              <p>Expect a prompt response to keep the process moving.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section form-section" id="quote-form">
+          <div class="container form-layout">
+            <div class="section-heading centered">
+              <p class="section-tag">Request a quote</p>
+              <h2>Tell us what you need</h2>
+              <p class="section-copy">
+                Submit the form below and we will follow up as soon as possible.
+              </p>
+            </div>
+
+            <div class="form-frame">
+              <iframe
+                id="tallyEmbed"
+                src="https://tally.so/r/68vppe"
+                width="100%"
+                height="500"
+                frameborder="0"
+                marginheight="0"
+                marginwidth="0"
+                title="Lead capture form"
+              ></iframe>
+            </div>
+          </div>
+        </section>
+
+        <section class="section container cta-panel">
+          <p class="section-tag">Ready to get started?</p>
+          <h2>Request a quote and let's make the next step easy.</h2>
+          <div class="cta-actions">
+            <a class="primary-button" href="#quote-form">Request a Quote</a>
+            <a class="secondary-button" id="footerCallButton" href="#">
+              Call <span data-config="phoneNumber">(000) 000-0000</span>
+            </a>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <a class="mobile-sticky-cta" href="#quote-form">Get My Quote</a>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const config = window.CLIENT_CONFIG || {};
+        const root = document.documentElement;
+
+        const contentMap = {
+          businessName: config.businessName,
+          serviceType: config.serviceType,
+          phoneNumber: config.phoneNumber,
+          location: config.location,
+          offerText: config.offerText,
+        };
+
+        Object.entries(contentMap).forEach(([key, value]) => {
+          if (!value) return;
+
+          document.querySelectorAll(`[data-config="${key}"]`).forEach((node) => {
+            node.textContent = value;
+          });
+        });
+
+        document.title = config.businessName
+          ? `${config.businessName} | Get a Quote in Minutes`
+          : "Lead Capture Landing Page";
+
+        if (config.primaryColor) {
+          root.style.setProperty("--primary", config.primaryColor);
+        }
+
+        const sanitizedPhone = (config.phoneNumber || "").replace(/[^\d+]/g, "");
+        const callHref = sanitizedPhone ? `tel:${sanitizedPhone}` : "#";
+
+        ["callButton", "heroCallButton", "footerCallButton"].forEach((id) => {
+          const link = document.getElementById(id);
+          if (link) link.href = callHref;
+        });
+
+        const tallyEmbed = document.getElementById("tallyEmbed");
+        if (tallyEmbed && config.tallyFormUrl) {
+          tallyEmbed.src = config.tallyFormUrl;
+        }
+      });
+    </script>
+  </body>
+</html>
