@@ -74,7 +74,6 @@ select {
 
 .eyebrow,
 .section-tag,
-.card-kicker,
 .step-number {
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -84,7 +83,6 @@ select {
 
 .eyebrow,
 .section-tag,
-.card-kicker,
 .step-number {
   color: var(--primary);
 }
@@ -158,8 +156,7 @@ select {
 .hero-offer,
 .section-copy,
 .step-card p,
-.trust-item span,
-.card-points li {
+.trust-item span {
   color: var(--muted);
   line-height: 1.75;
 }
@@ -282,19 +279,15 @@ select {
   max-width: 10ch;
 }
 
-.card-points {
-  list-style: none;
+.story-section {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.story-section h2 {
   margin: 0;
-  padding: 0;
-}
-
-.card-points li {
-  padding: 16px 0;
-  border-top: 1px solid var(--border);
-}
-
-.card-points li:last-child {
-  border-bottom: 1px solid var(--border);
+  max-width: 12ch;
 }
 
 .section {
