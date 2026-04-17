@@ -1,5 +1,5 @@
 window.CLIENT_CONFIG = {
-  businessName: "INSERT CLIENT BUSINESS NAME",
+  businessName: "YOUR BUSINESS NAME GOES HERE",
   serviceType: "INSERT SERVICE TYPE",
   primaryColor: "#1F6B4F",
   phoneNumber: "(555) 555-5555",

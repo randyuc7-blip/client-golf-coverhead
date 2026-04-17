@@ -26,7 +26,7 @@
       <header class="topbar container">
         <div class="brand-block">
           <p class="eyebrow">Lead Capture Template</p>
-          <a href="#top" class="brand" data-config="businessName">Your Business</a>
+          <a href="#top" class="brand" data-config="businessName">YOUR BUSINESS NAME GOES HERE</a>
         </div>
         <a class="call-button" id="callButton" href="#">
           Call <span data-config="phoneNumber">(000) 000-0000</span>
@@ -34,11 +34,11 @@
       </header>
 
       <main id="top">
-        <section class="hero container">
+        <section class="hero container scroll-reveal">
           <div class="hero-copy">
             <p class="section-tag">Premium local service</p>
-            <h1 class="hero-reveal">Get a Quote in Minutes</h1>
-            <p class="hero-subheadline hero-reveal hero-reveal-delay">
+            <h1 class="scroll-reveal motion-delay-1">Get a Quote in Minutes</h1>
+            <p class="hero-subheadline scroll-reveal motion-delay-2">
               Fast, simple, and reliable. Clients are already looking for you.
             </p>
             <p class="hero-offer" data-config="offerText">
@@ -68,7 +68,7 @@
             </div>
           </div>
 
-          <section class="hero-card story-section scroll-reveal">
+          <section class="hero-card story-section scroll-reveal motion-delay-1">
             <div class="story-content">
               <h2>Try a live color direction</h2>
               <p class="story-copy">
@@ -133,17 +133,17 @@
             <h2>Simple from first look to next step</h2>
           </div>
           <div class="steps-grid">
-            <article class="step-card">
+            <article class="step-card scroll-reveal">
               <span class="step-number">01</span>
               <h3>Browse featured products</h3>
               <p>Explore the collection and find the option that fits your needs.</p>
             </article>
-            <article class="step-card">
+            <article class="step-card scroll-reveal motion-delay-1">
               <span class="step-number">02</span>
               <h3>Choose what stands out</h3>
               <p>Review key details, pricing, and product highlights at a glance.</p>
             </article>
-            <article class="step-card">
+            <article class="step-card scroll-reveal motion-delay-2">
               <span class="step-number">03</span>
               <h3>Reach out quickly</h3>
               <p>Use the built-in CTA to request info or call right away.</p>
@@ -284,9 +284,9 @@
         const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
         if (prefersReducedMotion) {
-          document
-            .querySelectorAll(".scroll-reveal, .hero-reveal")
-            .forEach((element) => element.classList.add("is-visible"));
+          document.querySelectorAll(".scroll-reveal").forEach((element) => {
+            element.classList.add("is-visible");
+          });
           return;
         }
 
@@ -309,11 +309,6 @@
           observer.observe(element);
         });
 
-        requestAnimationFrame(() => {
-          document.querySelectorAll(".hero-reveal").forEach((element) => {
-            element.classList.add("is-visible");
-          });
-        });
       });
     </script>
   </body>
