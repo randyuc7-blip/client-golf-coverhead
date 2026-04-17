@@ -2,11 +2,7 @@
 
 This is a beginner-friendly static landing page template for service businesses.
 
-It is designed to work with:
-
-- Tally for the quote form
-- Zapier for automation
-- Notion for lead tracking
+It is designed to work as a beginner-friendly static catalog-style landing page for service or product-based businesses.
 
 ## Files
 
@@ -31,17 +27,24 @@ window.CLIENT_CONFIG = {
   phoneNumber: "(312) 555-0123",
   location: "Chicago",
   offerText: "Interior and exterior detailing with fast turnaround.",
-  tallyFormUrl: "https://tally.so/r/68vppe",
+  products: [
+    {
+      name: "Signature Cover",
+      price: "$29.99",
+      image: "https://example.com/product.jpg",
+      tag: "NEW",
+      description: "Short clean description",
+    },
+  ],
 };
 ```
 
 ## How The Lead Flow Works
 
 1. Visitor lands on the page
-2. Visitor clicks the CTA and fills out the Tally form
-3. Tally sends the submission to Zapier
-4. Zapier creates or updates a lead in Notion
-5. Client follows up with the lead
+2. Visitor explores featured products
+3. Visitor clicks to call or request more information
+4. Business follows up directly
 
 ## Deployment
 
@@ -56,6 +59,6 @@ Because this is a static template, you can deploy it immediately on:
 ## Notes
 
 - The phone buttons automatically use the number from `config.js`
-- The form embed automatically uses the Tally URL from `config.js`
+- The product catalog renders automatically from `config.js`
 - The page title updates automatically using the business name
 - The mobile sticky CTA appears on smaller screens for better conversion

@@ -6,7 +6,7 @@
     <title>Lead Capture Landing Page</title>
     <meta
       name="description"
-      content="Premium lead capture landing page template with Tally form integration."
+      content="Premium static catalog landing page template with dynamic product rendering."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -48,7 +48,7 @@
             </p>
 
             <div class="hero-actions">
-              <a class="primary-button" href="#quote-form">Get My Quote</a>
+              <a class="primary-button" href="#catalog">View Collection</a>
               <a class="secondary-button" id="heroCallButton" href="#">
                 Call <span data-config="phoneNumber">(000) 000-0000</span>
               </a>
@@ -87,57 +87,46 @@
         <section class="section container">
           <div class="section-heading">
             <p class="section-tag">How it works</p>
-            <h2>Simple from first click to follow-up</h2>
+            <h2>Simple from first look to next step</h2>
           </div>
           <div class="steps-grid">
             <article class="step-card">
               <span class="step-number">01</span>
-              <h3>Fill out the form</h3>
-              <p>Share a few quick details so we can understand your request.</p>
+              <h3>Browse featured products</h3>
+              <p>Explore the collection and find the option that fits your needs.</p>
             </article>
             <article class="step-card">
               <span class="step-number">02</span>
-              <h3>We review your request</h3>
-              <p>We look over the details and prepare the best next step.</p>
+              <h3>Choose what stands out</h3>
+              <p>Review key details, pricing, and product highlights at a glance.</p>
             </article>
             <article class="step-card">
               <span class="step-number">03</span>
-              <h3>You get contacted quickly</h3>
-              <p>Expect a prompt response to keep the process moving.</p>
+              <h3>Reach out quickly</h3>
+              <p>Use the built-in CTA to request info or call right away.</p>
             </article>
           </div>
         </section>
 
-        <section class="section form-section" id="quote-form">
-          <div class="container form-layout">
-            <div class="section-heading centered">
-              <p class="section-tag">Request a quote</p>
-              <h2>Tell us what you need</h2>
-              <p class="section-copy">
-                Submit the form below and we will follow up as soon as possible.
+        <section class="section catalog" id="catalog">
+          <div class="container">
+            <div class="section-heading">
+              <p class="section-tag">Featured products</p>
+              <h2>Curated pieces with a premium presentation</h2>
+              <p class="section-copy catalog-copy">
+                A clean, catalog-style collection designed to highlight quality, clarity,
+                and fast action.
               </p>
             </div>
-
-            <div class="form-frame">
-              <iframe
-                id="tallyEmbed"
-                src="https://tally.so/r/68vppe"
-                width="100%"
-                height="500"
-                frameborder="0"
-                marginheight="0"
-                marginwidth="0"
-                title="Lead capture form"
-              ></iframe>
-            </div>
+            <div class="catalog-grid" id="catalogGrid"></div>
           </div>
         </section>
 
         <section class="section container cta-panel">
           <p class="section-tag">Ready to get started?</p>
-          <h2>Request a quote and let's make the next step easy.</h2>
+          <h2>Explore the collection and take the next step with confidence.</h2>
           <div class="cta-actions">
-            <a class="primary-button" href="#quote-form">Request a Quote</a>
+            <a class="primary-button" href="#catalog">View Featured Products</a>
             <a class="secondary-button" id="footerCallButton" href="#">
               Call <span data-config="phoneNumber">(000) 000-0000</span>
             </a>
@@ -146,7 +135,7 @@
       </main>
     </div>
 
-    <a class="mobile-sticky-cta" href="#quote-form">Get My Quote</a>
+    <a class="mobile-sticky-cta" href="#catalog">View Collection</a>
 
     <script>
       document.addEventListener("DOMContentLoaded", () => {
@@ -179,15 +168,51 @@
 
         const sanitizedPhone = (config.phoneNumber || "").replace(/[^\d+]/g, "");
         const callHref = sanitizedPhone ? `tel:${sanitizedPhone}` : "#";
+        const hasPhone = Boolean(sanitizedPhone);
 
         ["callButton", "heroCallButton", "footerCallButton"].forEach((id) => {
           const link = document.getElementById(id);
           if (link) link.href = callHref;
         });
 
-        const tallyEmbed = document.getElementById("tallyEmbed");
-        if (tallyEmbed && config.tallyFormUrl) {
-          tallyEmbed.src = config.tallyFormUrl;
+        const catalogGrid = document.getElementById("catalogGrid");
+        const products = Array.isArray(config.products) ? config.products : [];
+
+        if (catalogGrid) {
+          catalogGrid.innerHTML = products
+            .map((product) => {
+              const name = product.name || "Product Name";
+              const price = product.price || "Contact for pricing";
+              const image = product.image || "";
+              const tag = product.tag || "";
+              const description = product.description || "";
+              const actionLabel = hasPhone ? "Call Now" : "Request Info";
+              const actionHref = hasPhone ? callHref : "#top";
+              const badgeMarkup = tag
+                ? `<span class="product-badge">${tag}</span>`
+                : "";
+              const imageMarkup = image
+                ? `<img src="${image}" alt="${name}" loading="lazy" />`
+                : `<div class="product-image-placeholder">Image coming soon</div>`;
+
+              return `
+                <article class="product-card">
+                  <div class="product-media">
+                    ${badgeMarkup}
+                    ${imageMarkup}
+                  </div>
+                  <div class="product-body">
+                    <div class="product-header">
+                      <h3>${name}</h3>
+                      <p class="product-price">${price}</p>
+                    </div>
+                    <p class="product-description">${description}</p>
+                    <a class="product-button" href="${actionHref}">${actionLabel}</a>
+                  </div>
+                </article>
+              `;
+            })
+            .join("");
         }
       });
     </script>
