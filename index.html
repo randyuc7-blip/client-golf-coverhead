@@ -268,23 +268,28 @@
             .map((product, index) => {
               const name = product.name || "Product Name";
               const price = product.price || "Contact for pricing";
-              const image = product.image || "";
               const tag = product.tag || "";
               const description = product.description || "";
               const actionLabel = hasPhone ? "Call Now" : "Request Info";
               const actionHref = hasPhone ? callHref : "#top";
+              const tierKey = name.toLowerCase().includes("bronze")
+                ? "bronze"
+                : name.toLowerCase().includes("silver")
+                  ? "silver"
+                  : "gold";
               const badgeMarkup = tag
                 ? `<span class="product-badge">${tag}</span>`
                 : "";
-              const imageMarkup = image
-                ? `<img src="${image}" alt="${name}" loading="lazy" />`
-                : `<div class="product-image-placeholder">Image coming soon</div>`;
 
               return `
                 <article class="product-card scroll-reveal" style="transition-delay: ${index * 100}ms;">
                   <div class="product-media">
                     ${badgeMarkup}
-                    ${imageMarkup}
+                    <div class="tier-visual tier-visual--${tierKey}" aria-hidden="true">
+                      <div class="tier-visual__ring"></div>
+                      <div class="tier-visual__core"></div>
+                      <div class="tier-visual__line"></div>
+                    </div>
                   </div>
                   <div class="product-body">
                     <div class="product-header">

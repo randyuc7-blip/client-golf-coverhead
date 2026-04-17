@@ -515,43 +515,92 @@ select {
 }
 
 .product-card:hover {
-  transform: translateY(-4px);
+  transform: scale(1.02);
   box-shadow: 0 28px 56px rgba(0, 0, 0, 0.24);
 }
 
 .product-media {
   position: relative;
   aspect-ratio: 4 / 4.5;
-  background:
-    linear-gradient(180deg, rgba(184, 150, 93, 0.08), rgba(184, 150, 93, 0)),
-    #efe6d8;
+  background: #f1eadf;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 24px;
 }
 
-.product-media img,
-.product-image-placeholder {
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
+.tier-visual {
+  width: min(100%, 240px);
+  aspect-ratio: 1 / 1;
+  border-radius: 28px;
+  position: relative;
+  overflow: hidden;
 }
 
-.product-media img {
-  object-fit: cover;
-  display: block;
+.tier-visual::before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border-radius: 24px;
+  border: 1px solid rgba(23, 20, 17, 0.08);
 }
 
-.product-image-placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(17, 17, 17, 0.06);
-  color: rgba(23, 20, 17, 0.68);
-  font-size: 0.9rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+.tier-visual__ring,
+.tier-visual__core,
+.tier-visual__line {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.tier-visual__ring {
+  width: 58%;
+  height: 58%;
+  border-radius: 999px;
+  border: 1px solid rgba(23, 20, 17, 0.12);
+}
+
+.tier-visual__core {
+  width: 28%;
+  height: 28%;
+  border-radius: 999px;
+}
+
+.tier-visual__line {
+  width: 48%;
+  height: 1px;
+  background: rgba(23, 20, 17, 0.14);
+}
+
+.tier-visual--bronze {
+  background:
+    linear-gradient(180deg, rgba(176, 129, 92, 0.18), rgba(176, 129, 92, 0.06)),
+    #eadacc;
+}
+
+.tier-visual--bronze .tier-visual__core {
+  background: #bc8e67;
+}
+
+.tier-visual--silver {
+  background:
+    linear-gradient(180deg, rgba(188, 190, 196, 0.2), rgba(188, 190, 196, 0.08)),
+    #ececed;
+}
+
+.tier-visual--silver .tier-visual__core {
+  background: #bfc3ca;
+}
+
+.tier-visual--gold {
+  background:
+    linear-gradient(180deg, rgba(216, 184, 98, 0.2), rgba(216, 184, 98, 0.08)),
+    #f0e6c9;
+}
+
+.tier-visual--gold .tier-visual__core {
+  background: #d4b15a;
 }
 
 .product-badge {
