@@ -46,7 +46,7 @@
             </p>
 
             <div class="hero-actions">
-              <a class="primary-button" href="#catalog">View Collection</a>
+              <a class="primary-button" href="#quote-form">Get My Quote</a>
               <a class="secondary-button" id="heroCallButton" href="#">
                 Call <span data-config="phoneNumber">(000) 000-0000</span>
               </a>
@@ -151,6 +151,58 @@
           </div>
         </section>
 
+        <section class="section form-section scroll-reveal" id="quote-form">
+          <div class="container">
+            <div class="form-panel">
+              <div class="section-heading centered">
+                <p class="section-tag">Get your quote</p>
+                <h2>Get Your Quote</h2>
+                <p class="section-copy">
+                  Fill this out and we'll contact you quickly.
+                </p>
+              </div>
+
+              <form
+                name="lead-form"
+                method="POST"
+                data-netlify="true"
+                class="lead-form"
+              >
+                <input type="hidden" name="form-name" value="lead-form" />
+
+                <label class="form-field">
+                  <span>Name</span>
+                  <input type="text" name="name" placeholder="Your name" required />
+                </label>
+
+                <label class="form-field">
+                  <span>Tier</span>
+                  <select name="tier" required>
+                    <option value="">Select a tier</option>
+                    <option value="Bronze">Bronze</option>
+                    <option value="Silver">Silver</option>
+                    <option value="Gold">Gold</option>
+                  </select>
+                </label>
+
+                <label class="form-field">
+                  <span>Contact</span>
+                  <input
+                    type="text"
+                    name="contact"
+                    placeholder="Email or phone"
+                    required
+                  />
+                </label>
+
+                <button type="submit" class="primary-button form-submit">
+                  Request Quote
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
+
         <section class="section catalog scroll-reveal" id="catalog">
           <div class="container">
             <div class="section-heading">
@@ -167,7 +219,7 @@
       </main>
     </div>
 
-    <a class="mobile-sticky-cta" href="#catalog">View Collection</a>
+    <a class="mobile-sticky-cta" href="#quote-form">Get My Quote</a>
 
     <script>
       document.addEventListener("DOMContentLoaded", () => {
