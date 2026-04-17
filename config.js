@@ -8,25 +8,25 @@ window.CLIENT_CONFIG = {
   tallyFormUrl: "https://tally.so/r/68vppe",
   products: [
     {
-      name: "Signature Cover",
+      name: "Bronze Tier",
       price: "$29.99",
       image: "./assets/golf-cover-signature.svg",
       tag: "NEW",
-      description: "A refined everyday option with clean lines and a premium finish.",
+      description: "A refined entry tier with clean lines and a premium finish.",
     },
     {
-      name: "Tour Edition",
+      name: "Silver Tier",
       price: "$49.99",
       image: "./assets/golf-cover-tour.svg",
       tag: "FEATURED",
-      description: "Designed for a more elevated presentation with standout detailing.",
+      description: "Designed for a more elevated tier presentation with standout detailing.",
     },
     {
-      name: "Classic Reserve",
+      name: "Gold Tier",
       price: "$39.99",
       image: "./assets/golf-cover-reserve.svg",
       tag: "SOLD OUT",
-      description: "A timeless catalog piece built to showcase quality and trust at a glance.",
+      description: "A timeless premium tier built to showcase quality and trust at a glance.",
     },
   ],
 };

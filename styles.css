@@ -103,16 +103,14 @@ select {
 
 .hero-copy,
 .hero-card,
-.step-card,
-.cta-panel {
+.step-card {
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
 }
 
 .hero-copy,
 .hero-card,
-.step-card,
-.cta-panel {
+.step-card {
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0)),
     var(--surface);
@@ -127,8 +125,7 @@ select {
 }
 
 .hero-copy::after,
-.hero-card::after,
-.cta-panel::after {
+.hero-card::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -174,8 +171,7 @@ select {
   color: var(--text);
 }
 
-.hero-actions,
-.cta-actions {
+.hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
@@ -345,10 +341,6 @@ select {
   gap: 22px;
 }
 
-.catalog + .cta-panel {
-  padding-top: 82px;
-}
-
 .product-card {
   display: flex;
   flex-direction: column;
@@ -483,22 +475,6 @@ select {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
 }
 
-.cta-panel {
-  position: relative;
-  border-radius: var(--radius-xl);
-  padding: 42px 36px;
-  text-align: center;
-}
-
-.cta-panel h2 {
-  margin: 0 auto 22px;
-  max-width: 12ch;
-}
-
-.cta-actions {
-  justify-content: center;
-}
-
 .mobile-sticky-cta {
   position: fixed;
   left: 16px;
@@ -525,8 +501,7 @@ select {
   }
 
   .hero-copy,
-  .hero-card,
-  .cta-panel {
+  .hero-card {
     padding: 32px 28px;
   }
 
@@ -543,8 +518,7 @@ select {
 
   .hero-copy,
   .hero-card,
-  .step-card,
-  .cta-panel {
+  .step-card {
     border-radius: 22px;
   }
 
@@ -553,8 +527,7 @@ select {
     font-size: clamp(3rem, 12vw, 4.3rem);
   }
 
-  .hero-actions,
-  .cta-actions {
+  .hero-actions {
     flex-direction: column;
   }
 

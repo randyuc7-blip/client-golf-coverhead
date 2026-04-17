@@ -40,7 +40,6 @@
             <h1>Get a Quote in Minutes</h1>
             <p class="hero-subheadline">
               Fast, simple, and reliable. Clients are already looking for you.
-              <span data-config="location">Your Area</span>
             </p>
             <p class="hero-offer" data-config="offerText">
               Limited-time offer goes here.
@@ -111,17 +110,6 @@
             <div class="catalog-grid" id="catalogGrid"></div>
           </div>
         </section>
-
-        <section class="section container cta-panel">
-          <p class="section-tag">Ready to get started?</p>
-          <h2>Your story telling goes here</h2>
-          <div class="cta-actions">
-            <a class="primary-button" href="#catalog">View Featured Products</a>
-            <a class="secondary-button" id="footerCallButton" href="#">
-              Call <span data-config="phoneNumber">(000) 000-0000</span>
-            </a>
-          </div>
-        </section>
       </main>
     </div>
 
@@ -160,7 +148,7 @@
         const callHref = sanitizedPhone ? `tel:${sanitizedPhone}` : "#";
         const hasPhone = Boolean(sanitizedPhone);
 
-        ["callButton", "heroCallButton", "footerCallButton"].forEach((id) => {
+        ["callButton", "heroCallButton"].forEach((id) => {
           const link = document.getElementById(id);
           if (link) link.href = callHref;
         });

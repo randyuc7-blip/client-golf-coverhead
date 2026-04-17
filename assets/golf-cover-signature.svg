@@ -2,21 +2,13 @@
   <rect width="1200" height="1400" fill="#EFE6D8"/>
   <rect x="72" y="72" width="1056" height="1256" rx="44" fill="#F6F1E8" stroke="#D8C7A9" stroke-width="2"/>
   <rect x="168" y="168" width="864" height="1064" rx="36" fill="url(#paint0_linear)"/>
-  <ellipse cx="600" cy="1048" rx="286" ry="72" fill="#C8D6B5" fill-opacity="0.42"/>
-  <path d="M628 374C628 314.353 676.353 266 736 266H766C825.647 266 874 314.353 874 374V860C874 919.647 825.647 968 766 968H736C676.353 968 628 919.647 628 860V374Z" fill="#171411"/>
-  <path d="M646 388C646 338.294 686.294 298 736 298H766C815.706 298 856 338.294 856 388V844C856 893.706 815.706 934 766 934H736C686.294 934 646 893.706 646 844V388Z" fill="#2A241E"/>
-  <path d="M712 338H790V888H712V338Z" fill="#B8965D"/>
-  <path d="M698 466H804" stroke="#F6F1E8" stroke-opacity="0.45" stroke-width="12" stroke-linecap="round"/>
-  <path d="M698 536H804" stroke="#F6F1E8" stroke-opacity="0.45" stroke-width="12" stroke-linecap="round"/>
-  <path d="M698 606H804" stroke="#F6F1E8" stroke-opacity="0.45" stroke-width="12" stroke-linecap="round"/>
-  <path d="M272 1066C350.258 1010.34 463.242 976 590 976C674.178 976 752.304 991.149 817.184 1016.98" stroke="#B8965D" stroke-width="10" stroke-linecap="round"/>
-  <circle cx="348" cy="946" r="56" fill="#F9F7F2"/>
-  <circle cx="330" cy="928" r="6" fill="#D9D9D9"/>
-  <circle cx="366" cy="928" r="6" fill="#D9D9D9"/>
-  <circle cx="330" cy="964" r="6" fill="#D9D9D9"/>
-  <circle cx="366" cy="964" r="6" fill="#D9D9D9"/>
-  <text x="168" y="1190" fill="#171411" font-family="Georgia, serif" font-size="68" letter-spacing="4">SIGNATURE COVER</text>
-  <text x="168" y="1262" fill="#7A6B55" font-family="Arial, sans-serif" font-size="30" letter-spacing="6">PREMIUM HEADCOVER PRESENTATION</text>
+  <circle cx="600" cy="610" r="232" fill="#8A5A3B"/>
+  <circle cx="600" cy="610" r="204" fill="#A56C43"/>
+  <circle cx="600" cy="610" r="170" fill="#BF865A"/>
+  <path d="M600 452L642.615 538.343L737.894 552.187L668.947 619.406L685.231 714.313L600 669.5L514.769 714.313L531.053 619.406L462.106 552.187L557.385 538.343L600 452Z" fill="#F6E8D5"/>
+  <circle cx="600" cy="610" r="247" stroke="#D8B08B" stroke-width="10" stroke-dasharray="10 16"/>
+  <text x="600" y="1060" fill="#171411" font-family="Georgia, serif" font-size="92" text-anchor="middle" letter-spacing="4">BRONZE</text>
+  <text x="600" y="1132" fill="#7A6B55" font-family="Arial, sans-serif" font-size="30" text-anchor="middle" letter-spacing="6">TIER OFFER</text>
   <defs>
     <linearGradient id="paint0_linear" x1="600" y1="168" x2="600" y2="1232" gradientUnits="userSpaceOnUse">
       <stop stop-color="#F7F0E4"/>

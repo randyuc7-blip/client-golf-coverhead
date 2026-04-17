@@ -1,25 +1,18 @@
 <svg width="1200" height="1400" viewBox="0 0 1200 1400" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1200" height="1400" fill="#E7E1D6"/>
-  <rect x="72" y="72" width="1056" height="1256" rx="44" fill="#F7F3EB" stroke="#D7C8B2" stroke-width="2"/>
+  <rect width="1200" height="1400" fill="#F1E5BE"/>
+  <rect x="72" y="72" width="1056" height="1256" rx="44" fill="#FAF4E5" stroke="#E0C981" stroke-width="2"/>
   <rect x="156" y="156" width="888" height="1088" rx="40" fill="url(#paint0_linear)"/>
-  <ellipse cx="600" cy="1056" rx="330" ry="82" fill="#B2C4A4" fill-opacity="0.32"/>
-  <rect x="520" y="300" width="188" height="650" rx="94" fill="#1A1714"/>
-  <rect x="546" y="328" width="136" height="594" rx="68" fill="#2A2621"/>
-  <rect x="584" y="328" width="60" height="594" rx="30" fill="#B8965D"/>
-  <path d="M338 958C449.856 888.491 514.794 806.563 542 712" stroke="#F7F3EB" stroke-opacity="0.9" stroke-width="16" stroke-linecap="round"/>
-  <path d="M342 958C453.856 888.491 518.794 806.563 546 712" stroke="#6B8C61" stroke-width="8" stroke-linecap="round"/>
-  <circle cx="310" cy="978" r="52" fill="#F8F6F1"/>
-  <circle cx="294" cy="962" r="5.5" fill="#D9D9D9"/>
-  <circle cx="326" cy="962" r="5.5" fill="#D9D9D9"/>
-  <circle cx="294" cy="994" r="5.5" fill="#D9D9D9"/>
-  <circle cx="326" cy="994" r="5.5" fill="#D9D9D9"/>
-  <path d="M738 400C738 359.131 771.131 326 812 326H848C888.869 326 922 359.131 922 400V450C922 490.869 888.869 524 848 524H812C771.131 524 738 490.869 738 450V400Z" fill="#F1E7D6" stroke="#D7C7AB" stroke-width="3"/>
-  <text x="156" y="1194" fill="#171411" font-family="Georgia, serif" font-size="68" letter-spacing="4">CLASSIC RESERVE</text>
-  <text x="156" y="1262" fill="#7A6B55" font-family="Arial, sans-serif" font-size="30" letter-spacing="6">GRASS, CLUBS, AND HEADCOVER DETAIL</text>
+  <circle cx="600" cy="610" r="232" fill="#C9A23F"/>
+  <circle cx="600" cy="610" r="204" fill="#E0BB58"/>
+  <circle cx="600" cy="610" r="170" fill="#F3D472"/>
+  <path d="M600 452L642.615 538.343L737.894 552.187L668.947 619.406L685.231 714.313L600 669.5L514.769 714.313L531.053 619.406L462.106 552.187L557.385 538.343L600 452Z" fill="#FFF7DE"/>
+  <circle cx="600" cy="610" r="247" stroke="#E7C969" stroke-width="10" stroke-dasharray="10 16"/>
+  <text x="600" y="1060" fill="#171411" font-family="Georgia, serif" font-size="92" text-anchor="middle" letter-spacing="4">GOLD</text>
+  <text x="600" y="1132" fill="#8C6E18" font-family="Arial, sans-serif" font-size="30" text-anchor="middle" letter-spacing="6">TIER OFFER</text>
   <defs>
     <linearGradient id="paint0_linear" x1="600" y1="156" x2="600" y2="1244" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#F8F4ED"/>
-      <stop offset="1" stop-color="#E5DBCB"/>
+      <stop stop-color="#FBF3D9"/>
+      <stop offset="1" stop-color="#F0DEA8"/>
     </linearGradient>
   </defs>
 </svg>
