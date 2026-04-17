@@ -643,6 +643,38 @@ select {
   display: none;
 }
 
+.thank-you-page {
+  min-height: calc(100vh - 48px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thank-you-card {
+  width: min(100%, 720px);
+  padding: 40px 32px;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0)),
+    var(--surface);
+  text-align: center;
+}
+
+.thank-you-card h1 {
+  margin: 0 0 16px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.8rem, 6vw, 4.6rem);
+  font-weight: 600;
+  line-height: 0.98;
+}
+
+.thank-you-card .section-copy {
+  max-width: 28ch;
+  margin: 0 auto 24px;
+}
+
 @media (max-width: 900px) {
   .hero,
   .steps-grid,
@@ -714,6 +746,10 @@ select {
 
   .mobile-sticky-cta {
     display: inline-flex;
+  }
+
+  .thank-you-card {
+    padding: 30px 20px;
   }
 }
 
