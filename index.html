@@ -307,7 +307,9 @@
         }
 
         if (leadForm) {
-          leadForm.addEventListener("submit", () => {
+          leadForm.addEventListener("submit", async (event) => {
+            event.preventDefault();
+
             const formData = new FormData(leadForm);
             const payload = {
               name: String(formData.get("name") || "").trim(),
@@ -315,16 +317,19 @@
               contact: String(formData.get("contact") || "").trim(),
             };
 
-            fetch("/.netlify/functions/send-lead-sms", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify(payload),
-              keepalive: true,
-            }).catch((error) => {
+            try {
+              await fetch("/.netlify/functions/send-lead-sms", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(payload),
+              });
+            } catch (error) {
               console.error("SMS notification failed:", error);
-            });
+            }
+
+            window.location.href = "/thank-you";
           });
         }
 
