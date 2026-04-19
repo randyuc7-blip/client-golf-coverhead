@@ -1,0 +1,8 @@
+{
+  "name": "client-golf-coverhead",
+  "private": true,
+  "version": "1.0.0",
+  "dependencies": {
+    "twilio": "^5.5.3"
+  }
+}

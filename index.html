@@ -261,6 +261,7 @@
         });
 
         const catalogGrid = document.getElementById("catalogGrid");
+        const leadForm = document.querySelector('form[name="lead-form"]');
         const products = Array.isArray(config.products) ? config.products : [];
 
         if (catalogGrid) {
@@ -303,6 +304,28 @@
               `;
             })
             .join("");
+        }
+
+        if (leadForm) {
+          leadForm.addEventListener("submit", () => {
+            const formData = new FormData(leadForm);
+            const payload = {
+              name: String(formData.get("name") || "").trim(),
+              tier: String(formData.get("tier") || "").trim(),
+              contact: String(formData.get("contact") || "").trim(),
+            };
+
+            fetch("/.netlify/functions/send-lead-sms", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(payload),
+              keepalive: true,
+            }).catch((error) => {
+              console.error("SMS notification failed:", error);
+            });
+          });
         }
 
         const swatches = Array.from(document.querySelectorAll(".theme-swatch"));
